@@ -2,6 +2,7 @@
     "name": "hexlet/code",
     "description": "First project hexlet-php",
     "type": "project",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -13,5 +14,8 @@
             "email": "artyomosepyan@mail.ru"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+      ]
 }
