@@ -1,0 +1,17 @@
+{
+    "name": "hexlet/code",
+    "description": "First project hexlet-php",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "artosepyan",
+            "email": "artyomosepyan@mail.ru"
+        }
+    ],
+    "require": {}
+}
