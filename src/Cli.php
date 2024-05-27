@@ -2,11 +2,14 @@
 
 namespace BrainGames\Cli;
 
+use function cli\line;
+use function cli\prompt;
+
+
 function sayHello()
 {
-    echo "Welcome to the Brain Game!\n";
-    echo "May I have your name?\n";
-
-    $name = trim(fgets(STDIN));
-    echo "Hello, {$name}!\n";
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    return $name;
 }

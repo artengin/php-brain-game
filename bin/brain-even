@@ -1,0 +1,10 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use function BrainGames\Cli\sayHello;
+use function BrainGames\Even\isEven;
+
+$name = sayHello();
+isEven($name);
