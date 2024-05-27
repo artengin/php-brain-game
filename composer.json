@@ -9,7 +9,9 @@
         },
         "files": [
             "src/Cli.php",
-            "src/Even.php"
+            "src/games/Even.php",
+            "src/Engine.php",
+            "src/games/Calc.php"
         ]
     },
     "authors": [
@@ -23,7 +25,8 @@
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
       ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.10"
