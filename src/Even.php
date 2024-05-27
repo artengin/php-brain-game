@@ -4,10 +4,13 @@ namespace BrainGames\Even;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Cli\sayHello;
 
 
-function isEven($name)
-{
+
+function isEven()
+{   
+    $name = sayHello();
     $resultat = 0;
     line('Answer "yes" if the number is even, otherwise answer "no".');
     while (true) {
