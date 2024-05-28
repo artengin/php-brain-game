@@ -25,7 +25,7 @@ function prime()
         $temp = null;
         for ($i = 2; $i <= $sqrtNumber; $i++) {
             if ($number % $i === 0) {
-                $temp = 'no'; 
+                $temp = 'no';
                 break;
             }
         }
