@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\games\Calc;
 
 use function cli\line;
 use function BrainGames\Cli\sayHello;
