@@ -12,20 +12,16 @@ function progression()
     $questions = [];
     $answers = [];
     for ($j = 0; $j < 3; $j++) {
-        $resultat = '';
-        $temp = 0;
-        $step = rand(3, 8);
-        $hiddenElement = rand(0, 9);
+        $resultat = [];
+        $start = rand(0, 50);
+        $step = rand(3, 50);
         for ($i = 0; $i < 10; $i++) {
-            $temp += $step;
-            if ($hiddenElement === $i) {
-                $resultat .= " ..";
-                $answers[] = $temp;
-            } else {
-                $resultat .= " {$temp}";
-            }
+            $resultat[] = $start + $step * $i;
         }
-        $questions[] = $resultat;
+        $hiddenElement = array_rand($resultat);
+        $answers[] = $resultat[$hiddenElement];
+        $resultat[$hiddenElement] = '..';
+        $questions[] = implode(' ', $resultat);
     }
     line('What number is missing in the progression?');
     engine($questions, $answers, $name);
