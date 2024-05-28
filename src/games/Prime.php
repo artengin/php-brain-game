@@ -14,21 +14,24 @@ function prime()
     for ($j = 0; $j < 3; $j++) {
         $number = rand(1, 100);
         $questions[] = $number;
-        $temp = null;
-        if ($number === 1) {
-            $answers[] = 'no';
-        } elseif ($number === 2) {
-            $answers[] = 'yes';
-        } else {
-            $sqrtNumber = sqrt($number);
-            for ($i = 2; $i <= $sqrtNumber; $i++) {
-                if ($number % $i === 0) {
-                    $temp = 'no';
-                }
-            }
-        }
-        $answers[] = $temp ?? 'yes';
+        $answers[] = findAnswer($number);
     }
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
     engine($questions, $answers, $name);
+}
+
+function findAnswer(int $number)
+{
+    if ($number === 1) {
+        return 'no';
+    } elseif ($number === 2) {
+        return 'yes';
+    }
+    $sqrtNumber = sqrt($number);
+    for ($i = 2; $i <= $sqrtNumber; $i++) {
+        if ($number % $i === 0) {
+            return 'no';
+        }
+    }
+    return 'yes';
 }
