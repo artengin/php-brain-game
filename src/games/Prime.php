@@ -14,19 +14,17 @@ function prime()
     for ($j = 0; $j < 3; $j++) {
         $number = rand(1, 100);
         $questions[] = $number;
+        $temp = null;
         if ($number === 1) {
             $answers[] = 'no';
-            continue;
         } elseif ($number === 2) {
             $answers[] = 'yes';
-            continue;
-        }
-        $sqrtNumber = sqrt($number);
-        $temp = null;
-        for ($i = 2; $i <= $sqrtNumber; $i++) {
-            if ($number % $i === 0) {
-                $temp = 'no';
-                break;
+        } else {
+            $sqrtNumber = sqrt($number);
+            for ($i = 2; $i <= $sqrtNumber; $i++) {
+                if ($number % $i === 0) {
+                    $temp = 'no';
+                }
             }
         }
         $answers[] = $temp ?? 'yes';
