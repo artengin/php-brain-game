@@ -20,22 +20,19 @@ function gcd()
             $number2 = $temp;
         }
         $questions[] = "{$number1} {$number2}";
-        $resultat = 0;
-
         if ($number1 % $number2 === 0) {
             $answers[] = $number2;
         } else {
+            $resultat = 0;
             do {
                 $divisionResult = $number1 / $number2;
                 $remainder = $number1 - ($number2 * floor($divisionResult));
-                if ($remainder > 0) {
-                    $resultat = $remainder;
-                    $number1 = $number2;
-                    $number2 = $remainder;
-                } elseif ($remainder == 0) {
+                if ($remainder == 0) {
                     $answers[] = $resultat;
-                    $resultat = $remainder;
                 }
+                $resultat = $remainder;
+                $number1 = $number2;
+                $number2 = $remainder;
             } while ($resultat != 0);
         }
     }
