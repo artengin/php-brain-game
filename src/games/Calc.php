@@ -7,7 +7,7 @@ use function BrainGames\Cli\sayHello;
 use function BrainGames\Engine\engine;
 
 function calc()
-{   
+{
     $name = sayHello();
     $questions = [];
     $answers = [];

@@ -7,7 +7,7 @@ use function BrainGames\Cli\sayHello;
 use function BrainGames\Engine\engine;
 
 function gcd()
-{   
+{
     $name = sayHello();
     $questions = [];
     $answers = [];
