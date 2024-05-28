@@ -20,21 +20,21 @@ function gcd()
             $number2 = $temp;
         }
         $questions[] = "{$number1} {$number2}";
-        if ($number1 % $number2 === 0) {
-            $answers[] = $number2;
-        } else {
-            $resultat = 0;
-            do {
-                $divisionResult = $number1 / $number2;
-                $remainder = $number1 - ($number2 * floor($divisionResult));
-                if ($remainder == 0) {
-                    $answers[] = $resultat;
-                }
-                $resultat = $remainder;
-                $number1 = $number2;
-                $number2 = $remainder;
-            } while ($resultat != 0);
-        }
+        $resultat = 0;
+        do {
+            $divisionResult = $number1 / $number2;
+            $remainder = $number1 - ($number2 * floor($divisionResult));
+            if (gettype($divisionResult) === "integer") {
+                $answers[] = $number2;
+                break;
+            } elseif ($remainder == 0) {
+                $answers[] = $resultat;
+                break;
+            }
+            $resultat = $remainder;
+            $number1 = $number2;
+            $number2 = $remainder;
+        } while ($resultat != 0);
     }
     line('Find the greatest common divisor of given numbers.');
     engine($questions, $answers, $name);
