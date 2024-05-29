@@ -28,7 +28,7 @@ make brain-calc
 ```
 
 ##### Demo:
-[![asciicast](https://asciinema.org/a/9Lo9HS4n3rASFIcn3KtviL1XZ.svg)](https://asciinema.org/a/9Lo9HS4n3rASFIcn3KtviL1XZ)
+[![asciicast](https://asciinema.org/a/OjDGQEMWiuXKudbgE5pLXhoVP.svg)](https://asciinema.org/a/OjDGQEMWiuXKudbgE5pLXhoVP)
 
 
 #### Game № 3
