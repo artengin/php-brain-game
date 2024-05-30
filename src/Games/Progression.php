@@ -23,8 +23,8 @@ function progression()
         }
         $hiddenElement = array_rand($result);
         $answers[] = $result[$hiddenElement];
-        $resultat[$hiddenElement] = '..';
-        $questions[] = implode(' ', $resultat);
+        $result[$hiddenElement] = '..';
+        $questions[] = implode(' ', $result);
     }
     startGame($questions, $answers, $name, DESCRIPTIONGAME);
 }
