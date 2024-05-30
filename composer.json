@@ -9,12 +9,12 @@
         },
         "files": [
             "src/Cli.php",
-            "src/games/Even.php",
+            "src/Games/Even.php",
             "src/Engine.php",
-            "src/games/Calc.php",
-            "src/games/Gcd.php",
-            "src/games/Progression.php",
-            "src/games/Prime.php"
+            "src/Games/Calc.php",
+            "src/Games/Gcd.php",
+            "src/Games/Progression.php",
+            "src/Games/Prime.php"
         ]
     },
     "authors": [
