@@ -7,7 +7,7 @@ use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'What is the result of the expression?';
 
-function calc()
+function startCalc()
 {
     $name = sayHello();
     $questions = [];

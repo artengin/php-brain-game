@@ -7,7 +7,7 @@ use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'Find the greatest common divisor of given numbers.';
 
-function gcd()
+function startGcd()
 {
     $name = sayHello();
     $questions = [];

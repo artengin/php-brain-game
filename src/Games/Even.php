@@ -7,7 +7,7 @@ use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function isEven()
+function startEven()
 {
     $name = sayHello();
     $questions = [];

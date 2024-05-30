@@ -7,7 +7,7 @@ use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function prime()
+function startPrime()
 {
     $name = sayHello();
     $questions = [];

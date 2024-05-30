@@ -7,7 +7,7 @@ use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'What number is missing in the progression?';
 
-function progression()
+function startProgression()
 {
     $name = sayHello();
     $questions = [];
