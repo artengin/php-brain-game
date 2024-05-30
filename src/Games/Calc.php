@@ -18,16 +18,16 @@ function calc()
         $numberOperand = rand(1, 3);
         $number2 = rand(1, 20);
 
-        switch (true) {
-            case $numberOperand === 1:
+        switch ($numberOperand) {
+            case 1:
                 $answers[] = $number1 + $number2;
                 $questions[] = "{$number1} + {$number2}";
                 break;
-            case $numberOperand === 2:
+            case 2:
                 $answers[] = $number1 - $number2;
                 $questions[] = "{$number1} - {$number2}";
                 break;
-            case $numberOperand === 3:
+            case 3:
                 $answers[] = $number1 * $number2;
                 $questions[] = "{$number1} * {$number2}";
                 break;
