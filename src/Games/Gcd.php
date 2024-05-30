@@ -24,5 +24,6 @@ function gcd()
 
 function findGcd(int $first, int $second): int
 {
-    return $first % $second !== 0 ? findGcd($second, $first % $second) : $second;
+    $result = $first % $second;
+    return $result > 0 ? findGcd($second, $first % $second) : $second;
 }
