@@ -2,29 +2,26 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Cli\sayHello;
 use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'What number is missing in the progression?';
 
-function startProgression()
+function start()
 {
-    $name = sayHello();
-    $questions = [];
-    $answers = [];
-    $numberOfRounds = 3;
+    startGame(DESCRIPTIONGAME, fn () => generateQuestionAndAnswer());
+}
+function generateQuestionAndAnswer()
+{
+    $result = [];
     $progressionLength = 10;
-    for ($j = 0; $j < $numberOfRounds; $j++) {
-        $result = [];
-        $start = rand(0, 50);
-        $step = rand(3, 50);
-        for ($i = 0; $i < $progressionLength; $i++) {
-            $result[] = $start + $step * $i;
-        }
-        $hiddenElement = array_rand($result);
-        $answers[] = $result[$hiddenElement];
-        $result[$hiddenElement] = '..';
-        $questions[] = implode(' ', $result);
+    $start = rand(0, 50);
+    $step = rand(3, 50);
+    for ($i = 0; $i < $progressionLength; $i++) {
+        $result[] = $start + $step * $i;
     }
-    startGame($questions, $answers, $name, DESCRIPTIONGAME);
+    $hiddenElement = array_rand($result);
+    $answer = $result[$hiddenElement];
+    $result[$hiddenElement] = '..';
+    $question = implode(' ', $result);
+    return [$question, $answer];
 }

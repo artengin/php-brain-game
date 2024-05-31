@@ -2,21 +2,18 @@
 
 namespace BrainGames\Games\Even;
 
-use function BrainGames\Cli\sayHello;
 use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function startEven()
+function start()
 {
-    $name = sayHello();
-    $questions = [];
-    $answers = [];
-    $numberOfRounds = 3;
-    for ($i = 0; $i < $numberOfRounds; $i++) {
-        $number = rand(1, 100);
-        $number % 2 === 0 ? $answers[] = "yes" : $answers[] = "no";
-        $questions[] = $number;
-    }
-    startGame($questions, $answers, $name, DESCRIPTIONGAME);
+    startGame(DESCRIPTIONGAME, fn () => generateQuestionAndAnswer());
+}
+function generateQuestionAndAnswer()
+{
+    $number = rand(1, 100);
+    $answer = $number % 2 === 0 ? "yes" : "no";
+    $question = $number;
+    return [$question, $answer];
 }

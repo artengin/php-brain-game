@@ -2,40 +2,35 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Cli\sayHello;
 use function BrainGames\Engine\startGame;
 
 const DESCRIPTIONGAME = 'What is the result of the expression?';
 
-function startCalc()
+function start()
 {
-    $name = sayHello();
-    $questions = [];
-    $answers = [];
-    $numberOfRounds = 3;
-    for ($i = 0; $i < $numberOfRounds; $i++) {
-        $number1 = rand(1, 20);
-        $numberOperand = rand(1, 3);
-        $number2 = rand(1, 20);
-
-        switch ($numberOperand) {
-            case 1:
-                $answers[] = $number1 + $number2;
-                $questions[] = "{$number1} + {$number2}";
-                break;
-            case 2:
-                $answers[] = $number1 - $number2;
-                $questions[] = "{$number1} - {$number2}";
-                break;
-            case 3:
-                $answers[] = $number1 * $number2;
-                $questions[] = "{$number1} * {$number2}";
-                break;
-            default:
-                $answers[] = $number1 - $number2;
-                $questions[] = "{$number1} - {$number2}";
-                break;
-        }
+    startGame(DESCRIPTIONGAME, fn () => generateQuestionAndAnswer());
+}
+function generateQuestionAndAnswer()
+{
+    $number1 = rand(1, 20);
+    $numberOperand = rand(1, 3);
+    $number2 = rand(1, 20);
+    switch ($numberOperand) {
+        case 1:
+            $answer = $number1 + $number2;
+            $question = "{$number1} + {$number2}";
+            break;
+        case 2:
+            $answer = $number1 - $number2;
+            $question = "{$number1} - {$number2}";
+            break;
+        case 3:
+            $answer = $number1 * $number2;
+            $question = "{$number1} * {$number2}";
+            break;
+        default:
+            throw new \Exception('Operand is not selected');
+            break;
     }
-    startGame($questions, $answers, $name, DESCRIPTIONGAME);
+    return [$question, $answer];
 }

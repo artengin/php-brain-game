@@ -4,6 +4,9 @@
 ## Brain Games
 5 mini-games to warm up the brain
 
+### Requirements
+PHP 8.3, Composer 2.7
+
 ### Setup
 ```
 make install
