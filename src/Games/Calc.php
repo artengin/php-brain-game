@@ -30,7 +30,6 @@ function generateQuestionAndAnswer()
             break;
         default:
             throw new \Exception('Operand is not selected');
-            break;
     }
     return [$question, $answer];
 }
